@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+.navigation ul {
+  padding: 0px;
+  padding-left: 10px;
+  list-style-type: none;
+  margin: 0px;
+  display: flex-box;
+}
+.navigation li {
+    padding: 0px;
+    list-style: none;
+    margin: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.navigation ul li a {
+    transition: .3s;
+    text-decoration: none;
+    font-size: 19px;
+    font-family: "Silkscreen", sans-serif;
+    font-style: normal;
+}
+
+.logo {
+    color: whitesmoke;
+    font-family: "Silkscreen", sans-serif;
+    font-style: normal;
+}
+.logo img {
+    position:relative;
+    top: 5px;
+}
+
+@font-face {
+    font-family: minecraft;
+    src: url("assets/font.otf") format("opentype");
+  }
+  
+  body {
+    background-color: #222327;
+    font-family: minecraft;
+    color: whitesmoke;
+  }
+
+  .inline * {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .logo h2 {
+    margin: 0;
+    padding: 0;
+    padding-top: 4px;
+  }
+
+  .indent {
+    padding-left: 20px;
+  }
+
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 175px);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    align-items: stretch;
+    transition: .2s;
+  }
+
+  .game {
+    border: 2px solid #e7e7e7;
+    border-radius: 4px;
+    padding: .5rem;
+    transition: .2s;
+
+  }
+
+  .game img {
+    max-width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+    margin-bottom: 3px;
+    border-radius: 10px;
+  }
+
+  .game .title, .game .desc {
+    display: block;
+    font-size: 1.2rem;
+    padding: none;
+    margin: none;
+    padding-top: 5px;
+    text-align: center;
+    container-name: game;
+  }
+
+  .game .desc {
+    font-size: 0.8rem;
+    color: #a7a7a7;
+  }
+
+  .game:hover {
+    box-shadow: 3px 3px 3px black;
+  }
+
+  a {
+    color: #838383;
+    transition: .3s;
+    text-decoration: none;
+  }
+
+  ul li a, ul li {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  a:hover, a.active, a.actives {
+    color: whitesmoke;
+  }
+
+  .selection li + li::before {
+    content: " / ";
+  }
+
+  .invisible {
+    display: none;
+  }
+
+  .fade {
+    opacity: 0;
+  }
+
+  #desc {
+    padding-top: 25px;
+    width: 100%;
+  }
+
+  #desc p {
+    text-align: left;
+    padding-left: 15px;
+    width: 95%;
+  }
+
+  #indent, #play {
+    padding-top: none;
+    padding-bottom: none;
+    line-height: 0;
+  }
+
+  #play {
+    padding-top: 27px;
+  }
+
+  #game-frame {
+    aspect-ratio: 16 / 9;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+
+  .lh {
+    line-height: 0;
+  }
+
+  #content {
+    width: 80%;
+    margin: auto;
+    z-index: 1;
+  }
+
+  #fullscreen:hover {
+    width: 2.2vw;
+    height: 2.2vw;
+    min-width: 27px;
+    min-height: 27px;
+  }
+
+  #fullscreen {
+    position: absolute;
+    bottom:5px;
+    right:2px;
+    padding-bottom: 1px;
+    width: 2vw;
+    height: 2vw;
+    min-width: 25px;
+    min-height: 25px;
+    z-index: 5;
+    pointer-events: all;
+  }
+
+  .game-frame-section {
+    position: relative;
+    z-index: 1;
+  }
+
+  #splashtext {
+    color: rgb(255, 255, 99);
+    position: absolute;
+    top: 20px;
+    left: 230px;
+    rotate: -7deg;
+    text-align: center;
+    background-color: #222327;
+    z-index: 0;
+    width: 300px;
+  }
+  .logo h2 {
+    z-index: 1;
+  }
