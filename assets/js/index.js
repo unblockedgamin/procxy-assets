@@ -4,6 +4,11 @@ splashtext = [
     "not just games, unblocked games!"
 ]
 
+function sendHeightToParent() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({type: 'setHeight', height: height}, '*'); // Replace '*' with the specific origin if possible
+}
+
 async function sortgames(category) {
     let gamesgrid = document.querySelector('#grid')
     let games = document.querySelectorAll('.game')
@@ -72,6 +77,13 @@ async function loadfromjson(json) {
 }
 
 window.addEventListener('load', async function () {
+    sendHeightToParent()
+
+    const observer = new MutationObserver(() => {
+        sendHeightToParent()
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
     let gamesgrid = document.querySelector('#grid')
     let params = (new URL(document.location)).searchParams;
     let activecategory = params.get("category");

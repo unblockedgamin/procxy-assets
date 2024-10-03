@@ -1,4 +1,16 @@
+function sendHeightToParent() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({type: 'setHeight', height: height}, '*'); // Replace '*' with the specific origin if possible
+}
+
 window.addEventListener('load', async function () {
+    sendHeightToParent()
+
+    const observer = new MutationObserver(() => {
+        sendHeightToParent()
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
     let params = (new URL(document.location)).searchParams;
     //this.document.querySelector('#help').href = `reportissue.html/?type=gamebroken?game=${params.get('game')}`
     let data = await fetch("./glist.json")
