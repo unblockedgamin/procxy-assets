@@ -76,14 +76,16 @@ async function loadfromjson(json) {
     }
 }
 
-window.addEventListener('load', async function () {
-    sendHeightToParent()
-
+window.addEventListener('DOMContentLoaded', () => {
     const observer = new MutationObserver(() => {
         console.log("mutation")
         sendHeightToParent()
     });
     observer.observe(document.body, { childList: true, subtree: true });
+})
+
+window.addEventListener('load', async function () {
+    sendHeightToParent()
 
     let gamesgrid = document.querySelector('#grid')
     let params = (new URL(document.location)).searchParams;
