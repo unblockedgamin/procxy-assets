@@ -54,7 +54,7 @@ window.addEventListener('load', async function () {
         this.document.querySelector('#desc p').innerText = game["card-desc"]
     }
     gameText = params.get('g').replaceAll(' ', '')
-    gameframe.src = game.url || `./g/${gameText}/index.html`
+    gameframe.src = `./g/${game.url || gameText}/index.html`
 
     fullscreenBtn = this.document.querySelector('#fullscreen')
     popoutBtn = this.document.querySelector('#popout')

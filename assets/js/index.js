@@ -67,7 +67,11 @@ async function loadfromjson(json) {
         else {
             let img = game.image 
             if (!game.image) {
-                img = `./g/${g.replaceAll(' ', '')}/icon.png`
+                if (game.url) {
+                    img = `./g/${game.url}/${game.imagename || "icon.png"}`
+                } else {
+                    img = `./g/${g.replaceAll(' ', '')}/${game.imagename || "icon.png"}`
+                }
             }
             
             let html = cardGameHtml(g, game['card-desc'], img, game.type)
