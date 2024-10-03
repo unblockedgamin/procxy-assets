@@ -7,7 +7,6 @@ window.addEventListener('load', async function () {
     sendHeightToParent()
 
     const observer = new MutationObserver(() => {
-        console.log("mutation")
         sendHeightToParent()
     });
     observer.observe(document.body, { childList: true, subtree: true });
@@ -68,4 +67,6 @@ window.addEventListener('load', async function () {
             console.log('test')
         }
     });
+
+    sendHeightToParent()
 })

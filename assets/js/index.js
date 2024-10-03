@@ -80,6 +80,7 @@ window.addEventListener('load', async function () {
     sendHeightToParent()
 
     const observer = new MutationObserver(() => {
+        console.log("mutation")
         sendHeightToParent()
     });
     observer.observe(document.body, { childList: true, subtree: true });
