@@ -81,7 +81,12 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log("mutation")
         sendHeightToParent()
     });
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, { 
+        childList: true,      // Observe direct children added/removed
+        subtree: true,        // Observe all descendants
+        attributes: true,     // Observe attribute changes
+        characterData: true,  // Observe changes to text content
+    });
 })
 
 window.addEventListener('load', async function () {
