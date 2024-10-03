@@ -32,10 +32,14 @@ window.addEventListener('load', async function () {
     gameframe.src = game.url || `./g/${gameText}/index.html`
 
     fullscreenBtn = this.document.querySelector('#fullscreen')
+    popoutBtn = this.document.querySelector('#popout')
     document.body.addEventListener('click', function(e) {
         if (fullscreenBtn.matches(':hover')) {
             gameframe.requestFullscreen();
             gameframe.contentWindow.focus();
+        }
+        else if (popoutBtn.matches(':hover')) {
+            window.open(gameframe.src).focus();
         }
     }, true); 
 

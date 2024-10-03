@@ -89,6 +89,7 @@ window.addEventListener('load', async function () {
     let games = this.document.querySelectorAll('.game')
     games.forEach(function(game, i) {
         game.addEventListener('click', function(){
+            window.parent.postMessage({type: 'changeQuery', query: game.id}, '*');
             window.location.href = `play.html?g=${game.id}`
         })
     })

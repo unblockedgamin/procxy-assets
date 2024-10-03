@@ -34,7 +34,7 @@
 
 @font-face {
     font-family: minecraft;
-    src: url("assets/font.otf") format("opentype");
+    src: url("./font.otf") format("opentype");
   }
   
   body {
@@ -172,14 +172,7 @@
     z-index: 1;
   }
 
-  #fullscreen:hover {
-    width: 2.2vw;
-    height: 2.2vw;
-    min-width: 27px;
-    min-height: 27px;
-  }
-
-  #fullscreen {
+  .fullscreenbtn {
     position: absolute;
     bottom:5px;
     right:2px;
@@ -190,6 +183,26 @@
     min-height: 25px;
     z-index: 5;
     pointer-events: all;
+  }
+
+  #popout {
+    right: 2.8vw;
+    width: 2vw;
+    height: 2vw;
+  }
+  
+  #popout:hover {
+    width: 2.2vw;
+    height: 2.2vw;
+    min-width: 27px;
+    min-height: 27px;
+  }
+  
+  .fullscreenbtn:hover {
+    width: 2.2vw;
+    height: 2.2vw;
+    min-width: 27px;
+    min-height: 27px;
   }
 
   .game-frame-section {
