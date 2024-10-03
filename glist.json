@@ -15,9 +15,5 @@
     "slope": {
         "card-desc": "play as a ball and roll down an endless slope!",
         "type": "arcade"
-    },
-    "run 3": {
-        "card-desc": "run and jump through 100s of levels in this epic platformer!",
-        "type": "flash games"
     }
 }
