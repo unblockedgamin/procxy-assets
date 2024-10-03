@@ -77,7 +77,7 @@ async function loadfromjson(json) {
                 if (game.url) {
                     img = `./g/${game.url}/${game.imagename || "icon.png"}`
                 } else {
-                    img = `./g/${g.replaceAll(' ', '')}/${game.imagename || "icon.png"}`
+                    img = `./g/${g.replaceAll(' ', '-')}/${game.imagename || "icon.png"}`
                 }
             }
             

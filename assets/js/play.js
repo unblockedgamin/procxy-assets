@@ -53,7 +53,7 @@ window.addEventListener('load', async function () {
         //this.document.querySelector('#desc').remove();
         this.document.querySelector('#desc p').innerText = game["card-desc"]
     }
-    gameText = params.get('g').replaceAll(' ', '')
+    gameText = params.get('g').replaceAll(' ', '-')
     gameframe.src = `./g/${game.url || gameText}/index.html`
 
     fullscreenBtn = this.document.querySelector('#fullscreen')
