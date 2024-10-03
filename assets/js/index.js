@@ -126,4 +126,6 @@ window.addEventListener('load', async function () {
     //if ((random == 10)) {
     //    this.document.querySelector('.logo h2').innerText = 'unblockedgamin.github.io :)'
     //}
+
+    sendHeightToParent()
 })
