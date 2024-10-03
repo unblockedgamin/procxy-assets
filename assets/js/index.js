@@ -47,8 +47,15 @@ async function sortgames(category) {
 
 }
 
-function cardGameHtml(name, desc, img, type) {
-    return `<div id="${name}" class="game ${type} invisible">
+function cardGameHtml(name, desc, img, tags) {
+    let typeSting = ""
+    for (let i = 0; i < tags.length; i++) {
+        typeSting = typeSting + tags[i]
+        if (i < tags.length) {
+            typeSting = typeSting + " "
+        }
+    }
+    return `<div id="${name}" class="game ${typeSting} invisible">
         <img src="${img}">
         <span class="title">${name}</span>
         <span class="desc">${desc}</span>
@@ -74,7 +81,7 @@ async function loadfromjson(json) {
                 }
             }
             
-            let html = cardGameHtml(g, game['card-desc'], img, game.type)
+            let html = cardGameHtml(g, game['card-desc'], img, game.tags)
             gamesgrid.innerHTML += html
         }
     }

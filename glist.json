@@ -1,19 +1,19 @@
 {
     "cookie clicker": {
         "card-desc": "try not to get addicted in this incremental/idle game about cookies.",
-        "type": "other",
+        "tags": ["other"],
         "note":"NOTE: Make sure to frequently backup your save data just in case. Your save data could also be imported from the original cookie clicker website."
     },
     "2048": {
         "card-desc": "try to get to the largest number possible!",
-        "type": "arcade"
+        "tags": ["puzzle"]
     },
     "mineblocks": {
         "card-desc": "minecraft... but 2d... and not terraria",
-        "type": "flash games"
+        "tags": ["adventure", "flash games"]
     },
     "slope": {
         "card-desc": "play as a ball and roll down an endless slope!",
-        "type": "arcade"
+        "tags": ["arcade"]
     }
 }
