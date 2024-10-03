@@ -120,7 +120,7 @@ window.addEventListener('load', async function () {
     }
 
     const text = splashtext[Math.floor(Math.random() * splashtext.length)];
-    this.document.querySelector('#splashtext').innerText = text
+    //this.document.querySelector('#splashtext').innerText = text
 
     //const random = Math.floor(Math.random() * 25)
     //if ((random == 10)) {
