@@ -3,10 +3,22 @@ splashtext = [
     "hidden from google search :)",
     "not just games, unblocked games!"
 ]
+typeToCore = {
+    "n64": "parallel_n64"
+}
 
 function sendHeightToParent() {
     const height = document.body.scrollHeight;
     window.parent.postMessage({type: 'setHeight', height: height}, '*'); // Replace '*' with the specific origin if possible
+}
+
+const isEmu = document.location.href.includes("emulator")
+var json = "./glist.json"
+var type = "html"
+
+if (isEmu) {
+    json = "./roms.json"
+    type = "emulator"
 }
 
 async function sortgames(category) {
@@ -72,7 +84,10 @@ async function loadfromjson(json) {
             continue
         } 
         else {
-            let img = game.image 
+            let img = game.image
+            if (isEmu) {
+                img = `./roms/images/${g.replaceAll(' ', '-')}.png`
+            }
             if (!game.image) {
                 if (game.url) {
                     img = `./g/${game.url}/${game.imagename || "icon.png"}`
@@ -110,7 +125,7 @@ window.addEventListener('load', async function () {
         activecategory = "allgames"
     }
 
-    let data = await fetch("./glist.json")
+    let data = await fetch(json)
         .then((res) => {
         return res.text();
     })
@@ -121,7 +136,7 @@ window.addEventListener('load', async function () {
     games.forEach(function(game, i) {
         game.addEventListener('click', function(){
             window.parent.postMessage({type: 'changeQuery', query: game.id}, '*');
-            window.location.href = `play.html?g=${game.id}`
+            window.location.href = `play.html?g=${game.id}?type=${type}`
         })
     })
 
