@@ -3,9 +3,6 @@ splashtext = [
     "hidden from google search :)",
     "not just games, unblocked games!"
 ]
-typeToCore = {
-    "n64": "parallel_n64"
-}
 
 function sendHeightToParent() {
     const height = document.body.scrollHeight;
@@ -59,12 +56,16 @@ async function sortgames(category) {
 
 }
 
-function cardGameHtml(name, desc, img, tags) {
+function cardGameHtml(name, desc, img, tags, type) {
     let typeSting = ""
-    for (let i = 0; i < tags.length; i++) {
-        typeSting = typeSting + tags[i]
-        if (i < tags.length) {
-            typeSting = typeSting + " "
+    if (isEmu) {
+        typeSting = type
+    } else {
+        for (let i = 0; i < tags.length; i++) {
+            typeSting = typeSting + tags[i]
+            if (i < tags.length) {
+                typeSting = typeSting + " "
+            }
         }
     }
     return `<div id="${name}" class="game ${typeSting} invisible">
@@ -88,15 +89,17 @@ async function loadfromjson(json) {
             if (isEmu) {
                 img = `./roms/images/${g.replaceAll(' ', '-')}.png`
             }
-            if (!game.image) {
-                if (game.url) {
-                    img = `./g/${game.url}/${game.imagename || "icon.png"}`
-                } else {
-                    img = `./g/${g.replaceAll(' ', '-')}/${game.imagename || "icon.png"}`
+            else {
+                if (!game.image) {
+                    if (game.url) {
+                        img = `./g/${game.url}/${game.imagename || "icon.png"}`
+                    } else {
+                        img = `./g/${g.replaceAll(' ', '-')}/${game.imagename || "icon.png"}`
+                    }
                 }
-            }
+            }  
             
-            let html = cardGameHtml(g, game['card-desc'], img, game.tags)
+            let html = cardGameHtml(g, game['card-desc'], img, game.tags, game.type)
             gamesgrid.innerHTML += html
         }
     }
@@ -136,7 +139,7 @@ window.addEventListener('load', async function () {
     games.forEach(function(game, i) {
         game.addEventListener('click', function(){
             window.parent.postMessage({type: 'changeQuery', query: game.id}, '*');
-            window.location.href = `play.html?g=${game.id}?type=${type}`
+            window.location.href = `play.html?g=${game.id}&type=${type}`
         })
     })
 

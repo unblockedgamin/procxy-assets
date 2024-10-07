@@ -1,3 +1,7 @@
+const typeToCore = {
+    "n64": ["parallel_n64", ".n64"] //core, file extnesion
+}
+
 function sendHeightToParent() {
     const height = document.body.scrollHeight;
     window.parent.postMessage({type: 'setHeight', height: height}, '*'); // Replace '*' with the specific origin if possible
@@ -25,13 +29,18 @@ window.addEventListener('load', async function () {
     observer.observe(document.body, { childList: true, subtree: true });
 
     let params = (new URL(document.location)).searchParams;
+    const g = params.get('g')
+    const type = params.get('type') || 'html5'
     //this.document.querySelector('#help').href = `reportissue.html/?type=gamebroken?game=${params.get('game')}`
-    let data = await fetch("./glist.json")
+    let jsonURL = "./glist.json"
+    if (type === "emulator") {
+        jsonURL = "./roms.json"
+    }
+    let data = await fetch(jsonURL)
         .then((res) => {
         return res.json();
     })
-    let game = data[params.get('g')];
-    console.log(game);
+    let game = data[g];
 
     if (game.note) {
         this.document.querySelector('#note').innerText = game.note
@@ -41,20 +50,27 @@ window.addEventListener('load', async function () {
 
     gameframe = document.querySelector('#game-frame')
 
-    this.document.querySelector('#play').innerText = `play ${params.get('g')}`
+    this.document.querySelector('#play').innerText = `play ${g}`
     if (game.desc) {
         this.document.querySelector('#desc p').innerText = game.desc
     } else if (game.credit) {
-        this.document.querySelector('#desc p').innerText = `All credit goes to ${game.credit} for ${params.get('g')}. We do not intend to copy or claim ${params.get('game')} as our own. We are just rehosting the game so more people could play!`
+        this.document.querySelector('#desc p').innerText = `All credit goes to ${game.credit} for ${g}. We do not intend to copy or claim ${g} as our own. We are just rehosting the game so more people could play!`
         if (game.website) {
-            this.document.querySelector('#desc p').innerText += ` You can play ${params.get('g')} on the original website: ${game.website}`
+            this.document.querySelector('#desc p').innerText += ` You can play ${g} on the original website: ${game.website}`
         }
     } else {
         //this.document.querySelector('#desc').remove();
         this.document.querySelector('#desc p').innerText = game["card-desc"]
     }
-    gameText = params.get('g').replaceAll(' ', '-')
-    gameframe.src = `./g/${game.url || gameText}/index.html`
+    gameText = g.replaceAll(' ', '-')
+    if (type == 'emulator') {
+        const coreData = typeToCore[game.type]
+        const rom = `https://geometrymath.netlify.app/roms/${g.replaceAll(' ', '-')}${coreData[1]}`
+        console.log(rom)
+        gameframe.src = `https://algebramath.netlify.app/?rom=${rom}&core=${coreData[0]}`
+    } else {
+        gameframe.src = `./g/${game.url || gameText}/index.html`
+    }
 
     fullscreenBtn = this.document.querySelector('#fullscreen')
     popoutBtn = this.document.querySelector('#popout')
