@@ -65,10 +65,10 @@ window.addEventListener('load', async function () {
     gameText = g.replaceAll(' ', '-')
     if (type == 'emulator') {
         const coreData = typeToCore[game.type]
-        const rom = `https://geometrymath.netlify.app/roms/${g.replaceAll(' ', '-')}${coreData[1]}`
+        const rom = `${g.replaceAll(' ', '-')}${coreData[1]}`
         
         this.document.querySelector('#back').href = "emulator.html"
-        gameframe.src = `https://algebramath.netlify.app/?rom=${rom}&core=${coreData[0]}`
+        gameframe.src = `./emulator/index.html?rom=${rom}&core=${coreData[0]}`
     } else {
         gameframe.src = `./g/${game.url || gameText}/index.html`
     }
