@@ -1,0 +1,63 @@
+{
+    "banjo kazooie": {
+      "card-desc": "A platformer featuring Banjo and Kazooie on a quest.",
+      "type": "n64"
+    },
+    "donkey kong 64": {
+      "card-desc": "A 3D platformer to rescue Donkey Kong's friend.",
+      "type": "n64"
+    },
+    "harvest moon 64": {
+      "card-desc": "A farming sim where you manage crops and relationships.",
+      "type": "n64"
+    },
+    "kirby 64": {
+      "card-desc": "A platformer where Kirby saves his friends.",
+      "type": "n64"
+    },
+    "mario kart 64": {
+      "card-desc": "A fun racing game with Mario and friends.",
+      "type": "n64"
+    },
+    "paper mario": {
+      "card-desc": "An RPG where Mario saves Princess Peach.",
+      "type": "n64"
+    },
+    "perfect dark": {
+      "card-desc": "A sci-fi first-person shooter with Joanna Dark.",
+      "type": "n64"
+    },
+    "pokemon stadium": {
+      "card-desc": "A battle game for Pokémon in 3D arenas.",
+      "type": "n64"
+    },
+    "star fox 64": {
+      "card-desc": "A rail shooter with Fox McCloud in space.",
+      "type": "n64"
+    },
+    "super mario 64": {
+      "card-desc": "A 3D adventure to save Princess Peach.",
+      "type": "n64"
+    },
+    "super smash bros": {
+      "card-desc": "A fighting game with Nintendo characters.",
+      "type": "n64"
+    },
+    "tony hawk pro skater": {
+      "card-desc": "A skateboarding game with tricks and stunts.",
+      "type": "n64"
+    },
+    "yoshis story": {
+      "card-desc": "A platformer to save the Super Happy Tree.",
+      "type": "n64"
+    },
+    "zelda majoras mask": {
+      "card-desc": "Link must save Termina in three days.",
+      "type": "n64"
+    },
+    "zelda ocarina of time": {
+      "card-desc": "Link's quest to save Hyrule from Ganondorf.",
+      "type": "n64"
+    }
+  }
+  
