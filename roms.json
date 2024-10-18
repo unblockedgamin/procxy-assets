@@ -1,4 +1,88 @@
 {
+    "castlevania": {
+        "card-desc": "A classic action platformer where you battle Dracula and his minions.",
+        "type": "nes"
+    },
+    "donkey kong": {
+        "card-desc": "A platform game where Mario must save Princess Peach from Donkey Kong.",
+        "type": "nes"
+    },
+    "final fantasy": {
+        "card-desc": "An iconic role-playing game that started the legendary series.",
+        "type": "nes"
+    },
+    "kirbys adventure": {
+        "card-desc": "A colorful platformer where Kirby can absorb enemies' powers.",
+        "type": "nes"
+    },
+    "megaman": {
+        "card-desc": "A side-scrolling action game where you defeat Robot Masters.",
+        "type": "nes"
+    },
+    "punch out": {
+        "card-desc": "A boxing game featuring Little Mac as he climbs the ranks to fight the champion.",
+        "type": "nes"
+    },
+    "super mario brothers": {
+        "card-desc": "The classic platformer that set the standard for the genre.",
+        "type": "nes"
+    },
+    "tetris": {
+        "card-desc": "A puzzle game where players arrange falling blocks to clear lines.",
+        "type": "nes"
+    },
+    "zelda": {
+        "card-desc": "An action-adventure game that follows Link on his quest to rescue Princess Zelda.",
+        "type": "nes"
+    },
+
+    
+    "donkey kong country": {
+        "card-desc": "A side-scrolling platformer with Donkey Kong and Diddy Kong on a quest.",
+        "type": "sfc"
+    },
+    "earthbound": {
+        "card-desc": "A quirky RPG about a boy named Ness and his journey to save the world.",
+        "type": "sfc"
+    },
+    "f zero": {
+        "card-desc": "A futuristic racing game with high-speed hovercrafts.",
+        "type": "sfc"
+    },
+    "final fantasy 5": {
+        "card-desc": "A role-playing game featuring a dynamic job system and epic story.",
+        "type": "sfc"
+    },
+    "street fighter 2": {
+        "card-desc": "The iconic fighting game that popularized competitive fighting games.",
+        "type": "sfc"
+    },
+    "super castlevania 4": {
+        "card-desc": "A revamped version of the Castlevania series with improved controls and graphics.",
+        "type": "sfc"
+    },
+    "super mario kart": {
+        "card-desc": "A kart racing game with Mario and friends, featuring power-ups and multiplayer.",
+        "type": "sfc"
+    },
+    "super mario rpg seven stars": {
+        "card-desc": "An RPG starring Mario in a quest to save the Star Road.",
+        "type": "sfc"
+    },
+    "super mario world": {
+        "card-desc": "A classic platformer where Mario must save Dinosaur Land from Bowser.",
+        "type": "sfc"
+    },
+    "super metroid": {
+        "card-desc": "An atmospheric action-adventure where Samus Aran hunts for the Metroid.",
+        "type": "sfc"
+    },
+    "zelda a link to the past": {
+        "card-desc": "An action-adventure where Link must save Hyrule and rescue Princess Zelda.",
+        "type": "sfc"
+    },
+
+
     "banjo kazooie": {
       "card-desc": "A platformer featuring Banjo and Kazooie on a quest.",
       "type": "n64"
