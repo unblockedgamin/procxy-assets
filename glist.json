@@ -1,4 +1,8 @@
 {
+    "eaglercraft": {
+        "card-desc": "minecraft 1.8 in your browser!",
+        "tags": ["adventure", "other"]
+    },
     "2048": {
         "card-desc": "try to get to the largest number possible!",
         "tags": ["puzzle"]
